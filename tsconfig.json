@@ -3,7 +3,8 @@
   "compilerOptions": {
     "paths": {
       "@foo-company/provider": ["./packages/ui/Provider/src"],
-      "@foo-company/icon-button": ["./packages/ui/IconButton/src"]
+      "@foo-company/icon-button": ["./packages/ui/IconButton/src"],
+      "@foo-company/carousel": ["./packages/ui/Carousel/src"]
     }
   }
 }
