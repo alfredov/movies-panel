@@ -18,6 +18,6 @@ export const button = css`
   }
 
   &[disabled] {
-    opacity: .5;
+    background-color: #A898D4;
   }
 `
