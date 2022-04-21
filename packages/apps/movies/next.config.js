@@ -6,6 +6,9 @@ const nextConfig = {
     // outside packages/app directory. 
     externalDir: true,
   }, 
+  images: {
+    domains: ['image.tmdb.org'],
+  },
 }
 
 module.exports = nextConfig

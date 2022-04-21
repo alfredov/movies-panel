@@ -7,16 +7,16 @@
   "module": "dist/index.module.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "rm -rf dist && rm -rf node_modules",
     "version": "yarn version",
-    "publish:stable": "yarn npm publish --tolerate-republish --access restricted"
+    "publish:stable": "npm publish --tolerate-republish --access public"
   },
   "files": [
     "dist",
     "README.md"
   ],
   "peerDependencies": {
-    "react": "^16.8 || ^17.0"
+    "react": "^16.8 || ^17.0 || ^18.0"
   },
   "sideEffects": false,
   "homepage": "https://web-develop-ui.vercel.app",
@@ -32,8 +32,8 @@
     "@radix-ui/react-alert-dialog": "^0.1.7"
   },
   "devDependencies": {
-    "@types/react": "^17.0.30",
-    "react": "^17.0.2",
+    "@types/react": "^17.0.43",
+    "react": "18.0.0",
     "tslib": "^2.3.1"
   }
 }

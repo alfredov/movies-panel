@@ -1,12 +1,15 @@
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import * as Carousel from '@foo-company/carousel'
+
 
 import action from '../../actions/fetchPopular'
 import * as selectors from '../../selectors'
 import ArrowIcon from '../../components/ArrowIcon'
+import ModalMovie from '../../components/ModalMovie'
 import styles from '../../styles/Screens.module.css'
+import { Movie } from '../../schemas'
 
 type Props = ReturnType<typeof mapStateToProps> & typeof mapDispatchToProps
 
@@ -16,6 +19,8 @@ const PopularScreen = ({
   totalPages,
   loading
 }: Props) => {
+  const [movieItem, setMovieItem] = useState<Movie | undefined>()
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     fetchPopular({ page: 1 })
@@ -43,7 +48,11 @@ const PopularScreen = ({
               id={movie.id}
               date={movie.releaseDate}
               imageUrl={movie.posterPath}
-              title={movie.title}  
+              title={movie.title}
+              onClick={() => {
+                setMovieItem(movie)
+                setOpen(true)
+              }}
             />
           )}
           <Carousel.Paginate disabled={loading}>
@@ -52,6 +61,13 @@ const PopularScreen = ({
           <Carousel.SlideBack />
           <Carousel.SlideNext />
         </Carousel.Root>
+      )}
+      {movieItem && (
+        <ModalMovie
+          movie={movieItem}
+          open={open}
+          onClose={() => setOpen(false)}
+        />
       )}
     </div>
   )
