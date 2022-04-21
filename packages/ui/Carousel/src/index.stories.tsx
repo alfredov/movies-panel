@@ -42,8 +42,11 @@ export const Template = () => {
         imageUrl='https://image.tmdb.org/t/p/w440_and_h660_face/u8BMLmwoc7YPHKSWawOOqC1c8lJ.jpg'
         title='title 4'        
       />
-      <Carousel.BackButton />
-      <Carousel.NextButton />
+      <Carousel.Paginate>
+        Load More
+      </Carousel.Paginate>
+      <Carousel.SlideBack />
+      <Carousel.SlideNext />
     </Carousel.Root>
   )
 }
