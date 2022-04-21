@@ -22,10 +22,10 @@
   "homepage": "https://web-develop-ui.vercel.app",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alfredov/paymentx.git"
+    "url": "git+https://github.com/alfredov/movies-panel.git"
   },
   "bugs": {
-    "url": "https://github.com/alfredov/paymentx/issues"
+    "url": "https://github.com/alfredov/movies-panel/issues"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",

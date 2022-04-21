@@ -1,5 +1,5 @@
 {
-  "name": "@foo-company/provider",
+  "name": "@foo-company/modal",
   "version": "1.0.0",
   "license": "MIT",
   "source": "src/index.ts",
@@ -7,16 +7,16 @@
   "module": "dist/index.module.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "clean": "rm -rf dist && rm -rf node_modules",
+    "clean": "rm -rf dist",
     "version": "yarn version",
-    "publish:stable": "npm publish --tolerate-republish --access public"
+    "publish:stable": "yarn npm publish --tolerate-republish --access restricted"
   },
   "files": [
     "dist",
     "README.md"
   ],
   "peerDependencies": {
-    "react": "^16.8 || ^17.0 || ^18.0"
+    "react": "^16.8 || ^17.0"
   },
   "sideEffects": false,
   "homepage": "https://web-develop-ui.vercel.app",
@@ -28,11 +28,12 @@
     "url": "https://github.com/alfredov/movies-panel/issues"
   },
   "dependencies": {
-    "@emotion/react": "^11.5.0"
+    "@emotion/react": "^11.5.0",
+    "@radix-ui/react-alert-dialog": "^0.1.7"
   },
   "devDependencies": {
-    "@types/react": "^17.0.43",
-    "react": "18.0.0",
+    "@types/react": "^17.0.30",
+    "react": "^17.0.2",
     "tslib": "^2.3.1"
   }
 }
