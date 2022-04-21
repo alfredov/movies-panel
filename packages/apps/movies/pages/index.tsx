@@ -3,6 +3,8 @@ import Head from 'next/head'
 
 import styles from '../styles/Home.module.css'
 
+import PopularScreen from '../screens/PopularScreen'
+
 const Home = () => {
   return (
     <div className={styles.container}>
@@ -12,7 +14,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1>Home</h1>
+        <PopularScreen />
       </main>
     </div>
   )

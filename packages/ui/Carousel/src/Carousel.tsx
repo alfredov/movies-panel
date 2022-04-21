@@ -151,7 +151,7 @@ export const Item: React.FC<ItemProps> = (props) => {
     <div css={styles.cardInfo}>
       <span css={styles.cardTitle}>{props.title}</span>
       <span css={styles.cardTitle}>
-        {format(
+        {props.date && format(
           getDate(props.date),
           'd MMM YYY',
           { locale: es }

@@ -1896,7 +1896,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@foo-company/carousel@workspace:packages/ui/Carousel":
+"@foo-company/carousel@workspace:*, @foo-company/carousel@workspace:packages/ui/Carousel":
   version: 0.0.0-use.local
   resolution: "@foo-company/carousel@workspace:packages/ui/Carousel"
   dependencies:
@@ -1928,6 +1928,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@foo-company/movies@workspace:packages/apps/movies"
   dependencies:
+    "@foo-company/carousel": "workspace:*"
     "@foo-company/provider": "workspace:*"
     "@types/node": 17.0.23
     "@types/react": 17.0.43
