@@ -6,3 +6,5 @@ export const fetchPopular = (state: RootState) => state[REDUCER_INDEX].fetchPopu
 export const fetchTopMovies = (state: RootState) => state[REDUCER_INDEX].fetchTopMovies
 
 export const fetchUpcomingMovies = (state: RootState) => state[REDUCER_INDEX].fetchUpcomingMovies
+
+export const nowPlayingMovies = (state: RootState) => state[REDUCER_INDEX].nowPlayingMovies

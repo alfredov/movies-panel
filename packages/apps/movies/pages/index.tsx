@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.css'
 import PopularScreen from '../screens/PopularScreen'
 import TopMoviesScreen from '../screens/TopMoviesScreen'
 import UpcomingMoviesScreen from '../screens/UpcomingMoviesScreen'
+import NowPlayingMoviesScreen from '../screens/NowPlayingMoviesScreen'
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
         <PopularScreen />
         <TopMoviesScreen />
         <UpcomingMoviesScreen />
+        <NowPlayingMoviesScreen />
       </main>
     </div>
   )
