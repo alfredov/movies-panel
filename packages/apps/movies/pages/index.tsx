@@ -4,6 +4,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 import PopularScreen from '../screens/PopularScreen'
+import TopMoviesScreen from '../screens/TopMoviesScreen'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       </Head>
       <main className={styles.main}>
         <PopularScreen />
+        <TopMoviesScreen />
       </main>
     </div>
   )
