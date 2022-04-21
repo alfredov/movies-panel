@@ -1,13 +1,48 @@
 .container {
-  padding: 0 11px;
   background-color: #F7F7F7;
 }
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 4rem 60px;
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 70px;
+}
+
+.header {
+  background-color: black;
+  background-image: url(/header-background.png);
+  background-size: cover;
+  color: white;
+  height: 500px;
+  padding-left: 96px;
+  padding-top: 160px;
+}
+
+.header h1 {
+  margin: 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 54px;
+}
+
+.header > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F7CF71;
+  border-radius: 6px;
+  height: 72px;
+  width: 72px;
+  margin-bottom: 36px;
+}
+
+.header p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 26px 0px 0px;
+  max-width: 586px;
 }
