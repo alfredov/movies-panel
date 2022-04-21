@@ -19,26 +19,35 @@ const PopularScreen = ({
     fetchPopular({ page: 1 })
   }, [fetchPopular])
 
+  const paginate = (page: number) => {
+    fetchPopular({ page })
+  }
+
   return (
     <div>
       <h1>Populars</h1>
-      <Carousel.Root
-        isFetching={loading}
-        onPaginate={page => fetchPopular({ page })}
-        totalPages={totalPages}
-      >
-        {movies && movies.map(movie =>
-          <Carousel.Item
-            key={movie.id}
-            id={movie.id}
-            date={movie.releaseDate}
-            imageUrl={movie.posterPath}
-            title={movie.title}  
-          />
-        )}
-        <Carousel.BackButton />
-        <Carousel.NextButton />
-      </Carousel.Root>
+      {movies.length > 0 && (
+        <Carousel.Root
+          isFetching={loading}
+          onPaginate={paginate}
+          totalPages={totalPages}
+        >
+          {movies.map(movie =>
+            <Carousel.Item
+              key={movie.id}
+              id={movie.id}
+              date={movie.releaseDate}
+              imageUrl={movie.posterPath}
+              title={movie.title}  
+            />
+          )}
+          <Carousel.Paginate disabled={loading}>
+            Cargar más
+          </Carousel.Paginate>
+          <Carousel.SlideBack />
+          <Carousel.SlideNext />
+        </Carousel.Root>
+      )}
     </div>
   )
 }

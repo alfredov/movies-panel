@@ -20,7 +20,8 @@ const CarouselContext = React.createContext({
   disableNextButton: false,
   disableBackButton: false,
   nextHandler: () => {},
-  backHandler: () => {}
+  backHandler: () => {},
+  paginate: () => {}
 })
 
 export const Root: React.FC<Props> = ({
@@ -42,7 +43,7 @@ export const Root: React.FC<Props> = ({
     if (onInit) {
       onInit(1)
     }
-  }, [onInit])
+  }, [])
 
   React.useEffect(() => {
     const options = {
@@ -73,8 +74,8 @@ export const Root: React.FC<Props> = ({
     }
   }, [])
 
-  React.useEffect(() => {
-    if (disableNextButton && !isFetching && totalPages && totalPages > page) {
+  const paginate = () => {
+    if (!isFetching && totalPages && totalPages > page) {
       setPage(pageState => {
         const nextPage = pageState + 1
         if (onPaginate) {
@@ -83,13 +84,7 @@ export const Root: React.FC<Props> = ({
         return nextPage
       })
     }
-  }, [
-    disableNextButton,
-    isFetching,
-    totalPages,
-    page,
-    onPaginate
-  ])
+  }
 
   const nextHandler = () => push('next')
 
@@ -111,7 +106,8 @@ export const Root: React.FC<Props> = ({
       disableBackButton,
       disableNextButton,
       backHandler,
-      nextHandler
+      nextHandler,
+      paginate
     }}>
       <div css={styles.main}>
         <div css={{ position: 'relative' }}>
@@ -162,19 +158,20 @@ export const Item: React.FC<ItemProps> = (props) => {
   )
 }
 
-export const NextButton = () => {
-  const { nextHandler, disableNextButton } = React.useContext(CarouselContext)
+export const SlideNext = () => {
+  const { nextHandler, disableNextButton, paginate } = React.useContext(CarouselContext)
+
   return (
     <IconButton
       as="right-arrow"
       css={styles.buttonNextStyle}
-      disabled={disableNextButton}
       onClick={nextHandler}
+      disabled={disableNextButton}
     />
   )
 }
 
-export const BackButton = () => {
+export const SlideBack = () => {
   const { backHandler, disableBackButton } = React.useContext(CarouselContext)
   return (
     <IconButton
@@ -183,5 +180,29 @@ export const BackButton = () => {
       disabled={disableBackButton}
       onClick={backHandler}
     />
+  )
+}
+
+export type PaginateProps = {
+  disabled?: boolean,
+}
+export const Paginate: React.FC<PaginateProps> = (props) => {
+  const { paginate } = React.useContext(CarouselContext)
+
+  const clickHandler = () => {
+    if (!props.disabled) {
+      paginate()
+    }
+  }
+
+  return  (
+    <div
+      tabIndex={0}
+      role="button"
+      onClick={clickHandler}
+      css={[styles.paginateCard, props.disabled && styles.cardDisabled]}
+    >
+      {props.children}
+    </div>
   )
 }
