@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import * as Carousel from '@foo-company/carousel'
 
@@ -7,6 +7,8 @@ import action from '../../actions/nowPlayingMovies'
 import * as selectors from '../../selectors'
 import ArrowIcon from '../../components/ArrowIcon'
 import styles from '../../styles/Screens.module.css'
+import ModalMovie from '../../components/ModalMovie'
+import { Movie } from '../../schemas'
 
 type Props = ReturnType<typeof mapStateToProps> & typeof mapDispatchToProps
 
@@ -16,6 +18,8 @@ const NowPlayingMoviesScreen = ({
   totalPages,
   loading
 }: Props) => {
+  const [movieItem, setMovieItem] = useState<Movie | undefined>()
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     nowPlayingMovies({ page: 1 })
@@ -43,7 +47,11 @@ const NowPlayingMoviesScreen = ({
               id={movie.id}
               date={movie.releaseDate}
               imageUrl={movie.posterPath}
-              title={movie.title}  
+              title={movie.title}
+              onClick={() => {
+                setMovieItem(movie)
+                setOpen(true)
+              }}
             />
           )}
           <Carousel.Paginate disabled={loading}>
@@ -52,6 +60,13 @@ const NowPlayingMoviesScreen = ({
           <Carousel.SlideBack />
           <Carousel.SlideNext />
         </Carousel.Root>
+      )}
+      {movieItem && (
+        <ModalMovie
+          movie={movieItem}
+          open={open}
+          onClose={() => setOpen(false)}
+        />
       )}
     </div>
   )
