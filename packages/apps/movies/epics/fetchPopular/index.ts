@@ -4,8 +4,8 @@ import { isActionOf } from 'typesafe-actions'
 import { ajax, AjaxError } from 'rxjs/ajax'
 import { of } from 'rxjs'
 
-import action, { TAction } from '../actions/fetchPopular'
-import { PATH_IMAGES_500_BASE } from '../constants'
+import action, { TAction } from '../../actions/fetchPopular'
+import { PATH_IMAGES_500_BASE } from '../../constants'
 
 export type TResponse = {
   page: number,
