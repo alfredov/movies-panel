@@ -9,7 +9,7 @@ $ npm install @foo-company/modal
 ```
 
 ## Usage
-```js
+```jsx
 import * as Modal from '@foo-company/modal'
 
 <Modal.Root open={isOpen} onOpenChange={(open) => setIsOpen(open)}>

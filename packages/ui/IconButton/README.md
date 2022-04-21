@@ -10,7 +10,7 @@ yarn add @foo-company/icon-button
 __Note:__ It is still not hosted on `npm`
 
 ## 🧩 Usage
-```js
+```jsx
 import IconButton from '@foo-company/icon-button'
 
 <IconButton as="left-arrow" onClick={() => console.log('clicked')} />
