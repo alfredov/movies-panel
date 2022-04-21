@@ -1,6 +1,7 @@
 # movies
 Nextjs web application of movies
 ## ⚙️ Run on local(Developer mode)
+Before executing it, we have to set a `.env` file with an `API_KEY`. Further reading [here](https://github.com/alfredov/movies-panel#how-to-run-foo-companymovies)
 ```bash
 yarn dev:movies
 ```
