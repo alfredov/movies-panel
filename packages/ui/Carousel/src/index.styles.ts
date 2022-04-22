@@ -31,7 +31,7 @@ export const card = css`
   cursor: pointer;
   scroll-snap-align: start;
   margin-right: 16px;
-  &> img {
+  & img,object {
     border-radius: 6px;
     width: 188px;
     height: 282px;

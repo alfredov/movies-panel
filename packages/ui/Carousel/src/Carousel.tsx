@@ -142,7 +142,9 @@ export const Item: React.FC<ItemProps> = (props) => {
   return (
   <div css={styles.cardWrapper}>
     <div tabIndex={0} role="button" css={styles.card} onClick={clickHandler}>
-      <img src={props.imageUrl} alt={props.title} />
+      <object  data={props.imageUrl} type="image/png">
+        <img src="https://user-images.githubusercontent.com/4967157/164774700-3af0a616-5183-4092-8dcb-283f145753eb.jpg" alt={props.title} />
+      </object>
     </div>
     <div css={styles.cardInfo}>
       <span css={styles.cardTitle}>{props.title}</span>
