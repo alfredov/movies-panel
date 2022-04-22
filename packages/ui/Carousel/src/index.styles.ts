@@ -11,8 +11,13 @@ export const container = css`
   overscroll-behavior-x: contain;
   overflow-x: scroll;
   overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   > span {
     margin-right: 0px;
+  }
+  &::-webkit-scrollbar {
+    display: none;
   }
 `
 
