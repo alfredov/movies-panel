@@ -63,25 +63,17 @@ export const cardDisabled = css`
 `
 
 export const buttonBackStyle = css`
+  display: block;
   position: absolute;
-  left: 0;
-  top: 100%;
-
-  @media only screen and (min-width: 768px) {
-    top: calc(42% - 36px);
-    left: -30px;
-  }
+  top: calc(42% - 36px);
+  left: -30px;
 `
 
 export const buttonNextStyle = css`
+  display: block;
   position: absolute;
-  right: 0;
-  top: 100%;
-
-  @media only screen and (min-width: 768px) {
-    right: -30px;
-    top: calc(42% - 36px);
-  }
+  right: -30px;
+  top: calc(42% - 36px);
 `
 
 export const cardInfo = css`
