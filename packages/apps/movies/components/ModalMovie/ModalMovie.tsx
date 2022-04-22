@@ -34,10 +34,15 @@ const ModalMovie = ({
   return (
     <Modal.Root open={open} onOpenChange={openChangeHandler}>
       <Modal.Content>
-        <Modal.Description asChild css={{ padding: '40px 30px' }}>
+        <Modal.Description asChild>
           <div className={styles.description}>
             <div className={styles.imageWrapper}>
-              <ImageFallback width={355} height={532} src={movie.posterPath} alt={movie.title}
+              <ImageFallback
+                className={styles.fallbackImage}
+                width={355}
+                height={532}
+                src={movie.posterPath}
+                alt={movie.title}
                 fallbackSrc="https://user-images.githubusercontent.com/4967157/164774700-3af0a616-5183-4092-8dcb-283f145753eb.jpg"
               />
             </div>

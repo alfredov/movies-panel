@@ -43,20 +43,28 @@ export const content = css`
 
 export const HeaderCloseIcon = css`
   border: none;
+  color: #141414;
   cursor: pointer;
   height: 40px;
   padding: 1px 6px;
   position: absolute;
-  left: 100%;
-  margin-left: 18px;
+  margin: 18px 20px 0px;
+  right: 0;
   width: 40px;
   padding: 0;
   background: transparent;
+
+  @media screen and (min-width: 912px) {
+    color: white;
+    left: 100%;
+    margin-top: 0px;
+    margin-left: 18px;
+    right: unset;
+  }
 `
 
 export const description = css`
   margin: 0;
-  padding: 20px;
   overflow: auto;
   max-height: 100vh;
 
