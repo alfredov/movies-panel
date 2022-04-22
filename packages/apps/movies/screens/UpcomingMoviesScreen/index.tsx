@@ -9,6 +9,7 @@ import ArrowIcon from '../../components/ArrowIcon'
 import styles from '../../styles/Screens.module.css'
 import ModalMovie from '../../components/ModalMovie'
 import { Movie } from '../../schemas'
+import LoadingCarousel from '../../components/LoadingCarousel'
 
 type Props = ReturnType<typeof mapStateToProps> & typeof mapDispatchToProps
 
@@ -35,7 +36,7 @@ const UpcomingMoviesScreen = ({
         <h2 className={styles.title}>Próximos eventos <ArrowIcon /></h2>
         <h3 className={styles.title}>Morbi ac turpis lacus</h3>
       </div>
-      {movies.length > 0 && (
+      {movies.length > 0 ? (
         <Carousel.Root
           isFetching={loading}
           onPaginate={paginate}
@@ -60,7 +61,7 @@ const UpcomingMoviesScreen = ({
           <Carousel.SlideBack />
           <Carousel.SlideNext />
         </Carousel.Root>
-      )}
+      ): <LoadingCarousel />}
       {movieItem && (
         <ModalMovie
           movie={movieItem}

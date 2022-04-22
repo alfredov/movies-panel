@@ -10,6 +10,7 @@ import ArrowIcon from '../../components/ArrowIcon'
 import ModalMovie from '../../components/ModalMovie'
 import styles from '../../styles/Screens.module.css'
 import { Movie } from '../../schemas'
+import LoadingCarousel from '../../components/LoadingCarousel'
 
 type Props = ReturnType<typeof mapStateToProps> & typeof mapDispatchToProps
 
@@ -36,7 +37,7 @@ const PopularScreen = ({
         <h2 className={styles.title}>Más populares <ArrowIcon /></h2>
         <h3 className={styles.title}>Nullam sapien arcu tempor</h3>
       </div>
-      {movies.length > 0 && (
+      {movies.length > 0 ? (
         <Carousel.Root
           isFetching={loading}
           onPaginate={paginate}
@@ -61,7 +62,7 @@ const PopularScreen = ({
           <Carousel.SlideBack />
           <Carousel.SlideNext />
         </Carousel.Root>
-      )}
+      ) : <LoadingCarousel />}
       {movieItem && (
         <ModalMovie
           movie={movieItem}

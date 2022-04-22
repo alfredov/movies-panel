@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background-color: #ddd;
+  border-radius: 6px;
+  width: 188px;
+  height: 282px;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title {
+  background-color: #ddd;
+  height: 35px;
+  width: 140px;
+}
+
+.title:last-child {
+  width: 188px;
+  height: 25px;
+}
